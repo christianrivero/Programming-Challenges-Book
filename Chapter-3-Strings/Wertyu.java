@@ -2,30 +2,49 @@ public class Wertyu
 {
 	public static void main(String[] args)
 	{
+<<<<<<< Updated upstream
 		System.out.println(retornaCaracterAnterior(x));
+=======
+		decodificarMensaje("O S, GOMR YPFSU/");
+>>>>>>> Stashed changes
 	}
 
 	static char retornaCaracterAnterior(char original)
 	{
-		String filas[] = {"`1234567890-=", "QWERTYUIOP[]\\", "ASDFGHJKL;'", "ZXCVBNM,./"};
-		int i, j, palabra=0, caracter=0;//Almacena posiciones de palabra y caracter; deben inicializarse para no mostrar error.
-		char anterior;
+	   String filas[] = {"`1234567890-=", "QWERTYUIOP[]\\", "ASDFGHJKL;'", "ZXCVBNM,./"};
+	   int i, j, palabra=0, caracter=0;//Almacena posiciones de palabra y caracter; deben inicializarse para no mostrar error.
+		char salida;
 
-		for(i=0; i<filas.length; i++)
+		if(original=='`' || original=='Q' || original=='A' || original=='Z' || original==' ')
+			salida = original;
+		else
 		{
-			for(j=0; j<filas[i].length(); j++)
+			for(i=0; i<filas.length; i++)
 			{
-				if(original==filas[i].charAt(j))
+				for(j=0; j<filas[i].length(); j++)
 				{
-					palabra=i;
-					caracter=j;
+					if(original==filas[i].charAt(j))
+					{
+						palabra=i;
+						caracter=j;
+					}
 				}
 			}
+
+			salida = filas[palabra].charAt(caracter-1);
 		}
-
-		anterior = filas[palabra].charAt(caracter-1);
-
-		return anterior;
+		return salida;
 	}
 
+	static void decodificarMensaje(String texto)
+	{
+		String resultado="";
+
+		for(int i=0; i<texto.length(); i++)
+		{
+			resultado = resultado+retornaCaracterAnterior(texto.charAt(i));
+		}
+
+		System.out.println(resultado);
+	}
 }
