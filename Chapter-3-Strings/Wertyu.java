@@ -29,6 +29,7 @@ public class Wertyu
 
 			salida = filas[palabra].charAt(caracter-1);
 		}
+		
 		return salida;
 	}
 
