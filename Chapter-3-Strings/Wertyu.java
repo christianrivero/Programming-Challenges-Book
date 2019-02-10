@@ -2,9 +2,6 @@ public class Wertyu
 {
 	public static void main(String[] args)
 	{
-	   String filas[] = {"`1234567890-=", "QWERTYUIOP[]\\", "ASDFGHJKL;'", "ZXCVBNM,./"};
-		char x='A';
-
 		System.out.println(retornaCaracterAnterior(x));
 	}
 
