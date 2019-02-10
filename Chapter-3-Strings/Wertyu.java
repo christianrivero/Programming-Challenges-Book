@@ -2,11 +2,7 @@ public class Wertyu
 {
 	public static void main(String[] args)
 	{
-<<<<<<< Updated upstream
-		System.out.println(retornaCaracterAnterior(x));
-=======
 		decodificarMensaje("O S, GOMR YPFSU/");
->>>>>>> Stashed changes
 	}
 
 	static char retornaCaracterAnterior(char original)
